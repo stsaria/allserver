@@ -35,3 +35,47 @@ Alternatively, you can set up a "list server" that has the servers' information.
 
 [Client](https://github.com/stsaria/allserver-client)
 [Server](https://github.com/stsaria/allserver-server)
+
+## ini File
+### What is an ini file?
+Note: This is not an overview of ini files, but rather a description of the ini files used by AllServer.
+
+An ini file is a configuration file for AllServer.
+How to write it is written in each file.
+The location is in the 'config' folder.
+
+### List of files
+The "basic.ini" file is an ini file that describes the basic AllServer settings (language and team). (It can be found on both client and server)
+The "minecraftserver.ini" file is an ini file that describes the AllServer's minecraft server settings (port, version). (Not available on the client)
+## Language Files
+### What is a language file?
+A language file is a written file that appears when using "AllServer".
+I, Saria, write in Japanese, but any text that can be expressed in UTF-8 (including environment-dependent text) can be written in a language file.
+Creation and Writing Methods
+The language file should be created in the "lang" folder as "language name.json" and written. (The contents differ between the client and server.)
+For Japanese language files, see "ja.json".(Server or Client)
+
+Sentences with many newlines are written using an array.
+
+ja.json
+```json
+"ModeSelectMessage":
+["モードを選択してください。\n",
+"[1] : クライアントモード（サーバー作成・検索）",
+"[2] : マインクラフトサーバーモード（サーバー支援・リストに登録）",
+"[3] : リストサーバーモード（マインクラフトサーバーリスト）",
+"[4] : 終了"
+]
+```
+Of course, non-array writing methods (e.g., multi-line strings) are also possible, but they all violate the rules of the **Json standard** and are therefore not used.
+
+### How to load
+
+To load a language file, enter the name of the language file without its extension in the "lang/lang" key of "basic.ini" in the "config" file
+
+basic.ini
+```ini
+[lang]
+lang = ja
+spare_lang = us
+```
