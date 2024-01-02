@@ -1,4 +1,4 @@
-# AllServer Server
+# AllServer
 ## Note
 *Be sure to read this before creating and publishing your server.
 - This system should be done with some understanding of server/internet knowledge.
